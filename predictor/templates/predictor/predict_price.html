@@ -1,0 +1,21 @@
+<!-- predictor/templates/predictor/predict_price.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction</title>
+</head>
+<body>
+    <h1>Laptop Price Prediction</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if predicted_price %}
+        <h2>Predicted Resale Price: ${{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
